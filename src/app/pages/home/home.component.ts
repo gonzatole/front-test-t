@@ -14,7 +14,7 @@ import { ProductTableComponent } from '../../components/product-table/product-ta
   imports: [
     LayoutComponent,
     SideMenuComponent,
-    ProductListComponent,
+    // ProductListComponent,
     ProductTableComponent,
   ],
   templateUrl: './home.component.html',
@@ -32,7 +32,7 @@ export class HomeComponent {
     setTimeout(() => {
       this.loading.setIsLoading(true);
       this.productService.getProducts().subscribe((data) => {
-        this.products = data;
+        this.products = data.products;
         this.loading.setIsLoading(false);
       });
     }, environment.pageInitialStartLoadingServiceDelay);

@@ -10,6 +10,6 @@ import { StatusColor } from './status-color';
   styleUrl: './status.component.scss',
 })
 export class StatusComponent {
-  @Input() statusText!: string;
+  @Input() data!: string | number;
   @Input() statusColor: StatusColor = StatusColor.info;
 }
