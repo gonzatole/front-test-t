@@ -1,4 +1,5 @@
 export interface Product {
+  showUpdateForm: boolean;
   id: number;
   title: string;
   price: number;

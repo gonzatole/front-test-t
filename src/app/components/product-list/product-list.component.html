@@ -3,5 +3,18 @@
     <h3>{{ product.title }}</h3>
     <p>{{ product.description }}</p>
     <strong>\${{ product.price }}</strong>
+    <button (click)="deleteProduct(product.id)">Eliminar</button>
+    <button (click)="showUpdateForm(product)">Actualizar</button>
+    <div *ngIf="product.showUpdateForm">
+      <form>
+        <label>Título:</label>
+        <input [value]="product.title" (input)="product.title = $any($event.target).value" type="text">
+        <label>Descripción:</label>
+        <input [value]="product.description" (input)="product.description = $any($event.target).value" type="text">
+        <label>Precio:</label>
+        <input [value]="product.price" (input)="product.price = $any($event.target).value" type="number">
+        <button (click)="updateProduct(product.id, product)">Guardar cambios</button>
+      </form>
+    </div>
   </div>
 </div>
